@@ -35,20 +35,20 @@ function setupFlossButton() {
             submessage: "Those 3 teeth are already gone, my friend"
         },
         {
-            message: "Shoulda listened when I told you!",
-            submessage: "But hey, at least you learned your lesson... right?"
+            message: "I shoulda told you to floss!",
+            submessage: "But hey, you shoulda known anyway... right?"
         },
         {
             message: "The teeth are gone, they're not coming back",
             submessage: "But you can still save the rest! Start flossing NOW!"
         },
         {
-            message: "I hate to say 'I told you so'...",
-            submessage: "Actually, I don't. I TOLD YOU SO!"
+            message: "I shoulda said something...",
+            submessage: "But you also shoulda just flossed on your own!"
         },
         {
-            message: "Okay, you get it now",
-            submessage: "Go floss the teeth you have left. Please."
+            message: "Okay, we both messed up here",
+            submessage: "I shoulda told you, you shoulda flossed. Go fix the rest!"
         }
     ];
     

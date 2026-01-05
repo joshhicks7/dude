@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: backgroundShift 8s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+    }
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2.8em;
+    color: #ff4757;
+    text-shadow: 3px 3px 0px #ffa502;
+    margin-bottom: 10px;
+    animation: titleShake 0.6s ease-in-out infinite;
+    font-weight: bold;
+}
+
+@keyframes titleShake {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-8px) rotate(-3deg);
+    }
+    75% {
+        transform: translateX(8px) rotate(3deg);
+    }
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #666;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.teeth-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tooth {
+    font-size: 5em;
+    animation: toothFall 2s ease-in-out infinite;
+    opacity: 0.3;
+    filter: grayscale(100%);
+    position: relative;
+}
+
+.tooth.missing::after {
+    content: '❌';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.4em;
+    animation: crossPulse 1s ease-in-out infinite;
+}
+
+@keyframes toothFall {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(5deg);
+    }
+}
+
+@keyframes crossPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+#tooth1 {
+    animation-delay: 0s;
+}
+
+#tooth2 {
+    animation-delay: 0.3s;
+}
+
+#tooth3 {
+    animation-delay: 0.6s;
+}
+
+.poem-container {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe8cc 100%);
+    border-radius: 15px;
+    border: 4px solid #ffa502;
+    box-shadow: 0 10px 30px rgba(255, 165, 2, 0.3);
+}
+
+.poem {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.poem-line {
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: #2c2c2c;
+    margin: 15px 0;
+    padding-left: 20px;
+    border-left: 4px solid #ffa502;
+    animation: lineAppear 0.5s ease-in forwards;
+    opacity: 0;
+}
+
+.poem-line:nth-child(1) { animation-delay: 0.1s; }
+.poem-line:nth-child(2) { animation-delay: 0.2s; }
+.poem-line:nth-child(3) { animation-delay: 0.3s; }
+.poem-line:nth-child(4) { animation-delay: 0.4s; }
+.poem-line:nth-child(5) { animation-delay: 0.5s; }
+.poem-line:nth-child(6) { animation-delay: 0.6s; }
+.poem-line:nth-child(7) { animation-delay: 0.7s; }
+.poem-line:nth-child(8) { animation-delay: 0.8s; }
+.poem-line:nth-child(9) { animation-delay: 0.9s; }
+.poem-line:nth-child(10) { animation-delay: 1.0s; }
+.poem-line:nth-child(11) { animation-delay: 1.1s; }
+.poem-line:nth-child(12) { animation-delay: 1.2s; }
+.poem-line:nth-child(13) { animation-delay: 1.3s; }
+.poem-line:nth-child(14) { animation-delay: 1.4s; }
+.poem-line:nth-child(15) { animation-delay: 1.5s; }
+.poem-line:nth-child(16) { animation-delay: 1.6s; }
+
+@keyframes lineAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.message-box {
+    margin: 30px 0;
+    padding: 25px;
+    background: #fff3cd;
+    border: 3px dashed #ffc107;
+    border-radius: 10px;
+}
+
+.message-box h2 {
+    color: #856404;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    color: #856404;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ff4757 0%, #ee5a6f 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    animation: statCardAppear 0.5s ease-in forwards;
+    opacity: 0;
+}
+
+.stat-card:nth-child(1) { animation-delay: 2s; }
+.stat-card:nth-child(2) { animation-delay: 2.2s; }
+.stat-card:nth-child(3) { animation-delay: 2.4s; }
+
+@keyframes statCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.stat-number {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 1em;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+.floss-btn {
+    margin-top: 30px;
+    padding: 18px 50px;
+    font-size: 1.3em;
+    background: linear-gradient(135deg, #2ed573 0%, #1e90ff 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.floss-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floss-btn:active {
+    transform: scale(0.95);
+}
+
+.floss-btn.disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    color: #999;
+    font-size: 1em;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1.2em;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .tooth {
+        font-size: 3.5em;
+    }
+    
+    .poem-line {
+        font-size: 1.1em;
+    }
+}
+
